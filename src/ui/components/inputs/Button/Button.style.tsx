@@ -11,4 +11,5 @@ export const ButtonStyled = styled(Button)`
 
 ButtonStyled.defaultProps = {
   dark: true,
+  uppercase: false,
 };

@@ -1,13 +1,22 @@
 import React from "react";
 import { View, Text } from "react-native";
 import Button from "ui/components/inputs/Button/Button";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "ui/routes/routes";
 
-// import { Container } from './styles';
+type NavigationProp = StackNavigationProp<RootStackParamList, "Index">;
 
-const Index: React.FC = () => {
+interface IndexProps {
+  navigation: NavigationProp;
+}
+
+const Index: React.FC<IndexProps> = ({ navigation }) => {
   return (
     <View style={{ flex: 1, justifyContent: "center" }}>
-      <Button mode={"contained"} onPress={() => {}}>
+      <Button
+        mode={"contained"}
+        onPress={() => navigation.navigate("EncontrarDiaristas")}
+      >
         Encontrar Diaristas
       </Button>
     </View>
